@@ -1,6 +1,6 @@
 # Calculadora de IMC
 
-Projeto Calculadora 
+Projeto Calculadora de IMC, desenvolvido durante o curso de React JS da B7Web.
 
 ## Tecnologias Utilizadas
 
