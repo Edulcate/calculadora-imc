@@ -29,7 +29,7 @@ export const levels: Level[] = [
 		title: 'Obesidade',
 		color: '#C3423F',
 		icon: 'down',
-		imc: [39.1, 99],
+		imc: [30.1, 99],
 	}
 ];
 
