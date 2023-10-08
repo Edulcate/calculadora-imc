@@ -56,7 +56,7 @@ const App = () => {
 
 					<input
 						type="number"
-						placeholder="Digite a sua height (em metros). Ex: 1.5"
+						placeholder="Digite a sua altura (em metros). Ex: 1.5"
 						value={ height > 0 ? height : '' }
 						id="height"
 						onChange={ handleInputChange }
@@ -65,7 +65,7 @@ const App = () => {
 
 					<input
 						type="number"
-						placeholder="Digite o seu weight (em kg). Ex: 75.4"
+						placeholder="Digite o seu peso (em kg). Ex: 75.4"
 						value={ weight > 0 ? weight : '' }
 						id="weight"
 						onChange={ handleInputChange }
