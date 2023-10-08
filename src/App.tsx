@@ -8,16 +8,16 @@ import { Level, levels, calculate } from './helpers/imc';
 import { GridItem } from './components/GridItem';
 
 type Fields = {
-	altura: number,
-	peso: number,
+	height: number,
+	weight: number,
 }
 
 const App = () => {
 	const [fields, setFields] = useState<Fields>({
-		altura: 0,
-		peso: 0,
+		height: 0,
+		weight: 0,
 	});
-	const { altura, peso } = fields;
+	const { height, weight } = fields;
 
 	const handleInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
 		setFields( { ...fields, [target.id]: target.value  } );
@@ -26,8 +26,8 @@ const App = () => {
 	const [toShow, setToShow] = useState<Level | null>(null);
 
 	const handleButtonClick = () => {
-		if ( altura && peso ) {
-			setToShow( calculate( altura, peso ) );
+		if ( height && weight ) {
+			setToShow( calculate( height, weight ) );
 			return;
 		}
 
@@ -37,8 +37,8 @@ const App = () => {
 	const handleBackButton = () => {
 		setToShow(null);
 		setFields({
-			altura: 0,
-			peso: 0,
+			height: 0,
+			weight: 0,
 		});
 	}
 
@@ -52,22 +52,22 @@ const App = () => {
 			<div className={styles.container}>
 				<div className={styles.leftSide}>
 					<h1>Calcule o seu IMC.</h1>
-					<p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.</p>
+					<p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o weight ideal de cada pessoa.</p>
 
 					<input
 						type="number"
-						placeholder="Digite a sua altura (em metros). Ex: 1.5"
-						value={ altura > 0 ? altura : '' }
-						id="altura"
+						placeholder="Digite a sua height (em metros). Ex: 1.5"
+						value={ height > 0 ? height : '' }
+						id="height"
 						onChange={ handleInputChange }
 						disabled={toShow ? true : false}
 					/>
 
 					<input
 						type="number"
-						placeholder="Digite o seu peso (em kg). Ex: 75.4"
-						value={ peso > 0 ? peso : '' }
-						id="peso"
+						placeholder="Digite o seu weight (em kg). Ex: 75.4"
+						value={ weight > 0 ? weight : '' }
+						id="weight"
 						onChange={ handleInputChange }
 						disabled={toShow ? true : false}
 					/>
